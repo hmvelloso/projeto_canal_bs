@@ -360,7 +360,7 @@ with st.expander("Filtros"):
 ####### END FILTER SECTION
 
 # PAGE BODY
-tab_quiz, tab_time, tab_jogador = st.tabs(["Quiz", "Time", "Jogador"], default="Quiz")
+tab_quiz, tab_time, tab_jogador = st.tabs(["Quiz", "Time", "Jogador"])
 
 with tab_quiz:
     match st.session_state['quiz_selecionado']:
