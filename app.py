@@ -1,11 +1,16 @@
 import pandas as pd
 import os
 import streamlit as st
+import math
+import numpy as np
+
+import matplotlib
+matplotlib.use("Agg")  # backend headless pro Streamlit Cloud
+
 import matplotlib.pyplot as plt
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 import matplotlib.image as mpimg
-import math
-import numpy as np
+
 
 
 def add_image(ax, img_path, xy, zoom=0.08, box_alignment=(0.5, 0.5), xybox=(0, 0), xycoords="data"):
