@@ -114,9 +114,6 @@ def submit_quiz_notas():
 def reset_quiz_notas():
     st.session_state['show_resultados'] = False
 
-@st.dialog('Popup teste')
-def pop_test(texto_teste):
-    st.write(texto_teste)
 
 def finalize_quiz(answer_index):
     check_answer(answer_index)
