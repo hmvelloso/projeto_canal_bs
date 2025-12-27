@@ -457,7 +457,10 @@ with tab_quiz:
                 col_left, col_center, col_right = foto_jogador_col.columns([1, 3, 1])
                 col_center.image(jogadores_df[jogadores_df['Jogador'] == jogador['nome']]['Image Link'].to_list()[0],
                                        width=125)
-                foto_jogador_col.markdown(jogador['nome'], text_alignment='center')
+                foto_jogador_col.markdown(
+                    "<span style='text-align: center;'>" + jogador['nome'] + "</span>",
+                    unsafe_allow_html=True
+                )
                 jogador['nota_guessed'] = slider_col.slider('Nota',
                                                             min_value=0.0,
                                                             max_value=10.0,
@@ -489,10 +492,9 @@ with tab_quiz:
 
             if st.session_state['show_resultados']:
                 st.markdown(
-                    "<span style='font-size: 2rem'> **Diferença média das notas: " + str(round(resultado_final, 2)) + "**</span>",
+                    "<span style='font-size: 2rem;text-align: center;'> **Diferença média das notas: " + str(round(resultado_final, 2)) + "**</span>",
                     unsafe_allow_html=True,
-                    width='stretch',
-                    text_alignment='center'
+                    width='stretch'
                 )
 
             col_left, col_center1, col_center2, col_right = st.columns([2, 1, 1, 2])
@@ -574,13 +576,11 @@ with tab_quiz:
                 nota_final = sum(actual_question['selected_correct'] for actual_question in st.session_state['questions'])
                 nota_final = 0
                 st.markdown(
-                    "<span style='font-size: 4rem'>**Sua nota é**</span>",
-                    text_alignment='center',
+                    "<span style='font-size: 4rem;text-align: center;'>**Sua nota é**</span>",
                     unsafe_allow_html=True
                 )
                 st.markdown(
-                    "<span style='font-size: 9rem'>" + str(nota_final) + "/10</span>",
-                    text_alignment='center',
+                    "<span style='font-size: 9rem;text-align: center;'>" + str(nota_final) + "/10</span>",
                     unsafe_allow_html=True
                 )
                 msg_final = ''
@@ -599,8 +599,7 @@ with tab_quiz:
                         msg_final = 'Mais um golaço do Danilo de cabeça! :trophy:'
 
                 st.markdown(
-                    "<span style='font-size: 3rem'>" + msg_final + "</span>",
-                    text_alignment='center',
+                    "<span style='font-size: 3rem;text-align: center;'>" + msg_final + "</span>",
                     unsafe_allow_html=True
                 )
                 col_left, col_center, col_right = st.columns([1, 4, 1])
@@ -714,36 +713,30 @@ with tab_time:
 
             best_month_col, worst_month_col = st.columns(2)
             best_month_col.markdown(
-                "<span style='font-size: 2.5rem;'><b>Melhor mês</b></span>",
-                text_alignment="center",
+                "<span style='font-size: 2.5rem;text-align: center;'><b>Melhor mês</b></span>",
                 unsafe_allow_html=True
             )
             best_month_col.markdown(
-                "<span style='font-size: 2rem;'>" + mes_maior_nota + "</span><br>"
-                "<span style='font-size: 1.75rem;'>" + ', '.join(competicoes_mes_maior_nota) + "</span>",
-                text_alignment="center",
+                "<span style='font-size: 2rem;text-align: center;'>" + mes_maior_nota + "</span><br>"
+                "<span style='font-size: 1.75rem;text-align: center;'>" + ', '.join(competicoes_mes_maior_nota) + "</span>",
                 unsafe_allow_html=True
             )
             best_month_col.markdown(
-                "Nota média<br><span style='font-size: 4rem;'>" + str(maior_nota_mes) + "</span>",
-                text_alignment="center",
+                "Nota média<br><span style='font-size: 4rem;text-align: center;'>" + str(maior_nota_mes) + "</span>",
                 unsafe_allow_html=True
             )
 
             worst_month_col.markdown(
-                "<span style='font-size: 2.5rem;'><b>Pior mês</b></span>",
-                text_alignment="center",
+                "<span style='font-size: 2.5rem;text-align: center;'><b>Pior mês</b></span>",
                 unsafe_allow_html=True
             )
             worst_month_col.markdown(
-                "<span style='font-size: 2rem;'>" + mes_menor_nota + "</span><br>"
-                "<span style='font-size: 1.75rem;'>" + ', '.join(competicoes_mes_menor_nota) + "</span>",
-                text_alignment="center",
+                "<span style='font-size: 2rem;text-align: center;'>" + mes_menor_nota + "</span><br>"
+                "<span style='font-size: 1.75rem;text-align: center;'>" + ', '.join(competicoes_mes_menor_nota) + "</span>",
                 unsafe_allow_html=True
             )
             worst_month_col.markdown(
-                "Nota média<br><span style='font-size: 4rem; margin:0'>" + str(menor_nota_mes) + "</span>",
-                text_alignment="center",
+                "Nota média<br><span style='font-size: 4rem;text-align: center; margin:0'>" + str(menor_nota_mes) + "</span>",
                 unsafe_allow_html=True
             )
 
@@ -868,36 +861,30 @@ with tab_time:
 
             best_game_col, worst_game_col = st.columns(2)
             best_game_col.markdown(
-                "<span style='font-size: 2.5rem;'><b>Melhor jogo</b></span>",
-                text_alignment="center",
+                "<span style='font-size: 2.5rem;text-align: center;'><b>Melhor jogo</b></span>",
                 unsafe_allow_html=True
             )
             best_game_col.markdown(
-                "<span style='font-size: 2rem;'>" + jogo_maior_nota_str + "</span><br>"
-                "<span style='font-size: 1.75rem;'>" + competicao_maior_nota + "</span>",
-                text_alignment="center",
+                "<span style='font-size: 2rem;text-align: center;'>" + jogo_maior_nota_str + "</span><br>"
+                "<span style='font-size: 1.75rem;text-align: center;'>" + competicao_maior_nota + "</span>",
                 unsafe_allow_html=True
             )
             best_game_col.markdown(
-                "Nota média<br><span style='font-size: 4rem;'>" + str(maior_nota) + "</span>",
-                text_alignment="center",
+                "Nota média<br><span style='font-size: 4rem;text-align: center;'>" + str(maior_nota) + "</span>",
                 unsafe_allow_html=True
             )
 
             worst_game_col.markdown(
-                "<span style='font-size: 2.5rem;'><b>Pior jogo</b></span>",
-                text_alignment="center",
+                "<span style='font-size: 2.5rem;text-align: center;'><b>Pior jogo</b></span>",
                 unsafe_allow_html=True
             )
             worst_game_col.markdown(
-                "<span style='font-size: 2rem;'>" + jogo_menor_nota_str + "</span><br>"
-                "<span style='font-size: 1.75rem;'>" + competicao_menor_nota + "</span>",
-                text_alignment="center",
+                "<span style='font-size: 2rem;text-align: center;'>" + jogo_menor_nota_str + "</span><br>"
+                "<span style='font-size: 1.75rem;text-align: center;'>" + competicao_menor_nota + "</span>",
                 unsafe_allow_html=True
             )
             worst_game_col.markdown(
-                "Nota média<br><span style='font-size: 4rem; margin:0'>" + str(menor_nota) + "</span>",
-                text_alignment="center",
+                "Nota média<br><span style='font-size: 4rem;text-align: center; margin:0'>" + str(menor_nota) + "</span>",
                 unsafe_allow_html=True
             )
 
@@ -1140,15 +1127,13 @@ with tab_jogador:
                     id_nota = idx + n_columns_compet*id_row
 
                     notas_competicao_cols[idx].markdown(
-                        "<span style='font-size: 2rem;'><b>" + competicao_dict[competicoes_jogadas[id_nota]][
+                        "<span style='font-size: 2rem;text-align: center;'><b>" + competicao_dict[competicoes_jogadas[id_nota]][
                             'name'] + "</b></span>",
-                        text_alignment="center",
                         unsafe_allow_html=True
                     )
                     nota_media = jogos_jogador[jogos_jogador['Competição'] == competicoes_jogadas[id_nota]]['Nota'].mean()
                     notas_competicao_cols[idx].markdown(
-                        "<span style='font-size: 4rem;'>" + str(round(nota_media, 1)) + "</span>",
-                        text_alignment="center",
+                        "<span style='font-size: 4rem;text-align: center;'>" + str(round(nota_media, 1)) + "</span>",
                         unsafe_allow_html=True
                     )
 
