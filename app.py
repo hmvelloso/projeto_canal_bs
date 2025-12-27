@@ -365,7 +365,7 @@ tab_quiz, tab_time, tab_jogador = st.tabs(["Quiz", "Time", "Jogador"])
 with tab_quiz:
     match st.session_state['quiz_selecionado']:
         case 0: # Menu de seleção do quiz
-            st.space(size='large')
+            st.markdown("<br><br>", unsafe_allow_html=True)
             col_left, col_center1, col_center2, col_right = st.columns([1, 2, 2, 1])
             col_center1.button(
                 'Notas por jogador',
