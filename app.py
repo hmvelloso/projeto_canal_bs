@@ -714,7 +714,8 @@ with tab_time:
             best_month_col, worst_month_col = st.columns(2)
             best_month_col.markdown(
                 "<span style='font-size: 2.5rem;text-align: center;'><b>Melhor mês</b></span>",
-                unsafe_allow_html=True
+                unsafe_allow_html=True,
+                text_alignment='center'
             )
             best_month_col.markdown(
                 "<span style='font-size: 2rem;text-align: center;'>" + mes_maior_nota + "</span><br>"
