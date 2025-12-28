@@ -560,7 +560,7 @@ with tab_quiz:
                     selected_option_idx = -1
 
                 st.markdown(
-                    'Opção selecionada: ' + selected_option + '<br>',
+                    'Opção selecionada: ' + str(selected_option) + '<br>'
                     'Índice opção selecionada: ' + str(selected_option_idx),
                     unsafe_allow_html=True
                 )
