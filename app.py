@@ -399,7 +399,7 @@ with tab_quiz:
 
                 col1, col2 = st.columns(2)
                 qtd_jogadores = col1.number_input(
-                    '',
+                    'qtd_jogadores',
                     min_value=0,
                     max_value=len(jogadores_df),
                     value=10,
@@ -409,7 +409,7 @@ with tab_quiz:
 
                 toggle_col, label_col = col2.columns([0.1,0.9])
                 ordem_jogadores = toggle_col.toggle(
-                    '',
+                    'ordem_jogadores',
                     key='toggle_jogadores',
                     label_visibility = 'collapsed',
                     value=True
@@ -459,7 +459,8 @@ with tab_quiz:
                                        width=125)
                 foto_jogador_col.markdown(
                     "<span style='text-align: center;'>" + jogador['nome'] + "</span>",
-                    unsafe_allow_html=True
+                    unsafe_allow_html=True,
+                    text_alignment='center'
                 )
                 jogador['nota_guessed'] = slider_col.slider('Nota',
                                                             min_value=0.0,
@@ -494,7 +495,8 @@ with tab_quiz:
                 st.markdown(
                     "<span style='font-size: 2rem;text-align: center;'> **Diferença média das notas: " + str(round(resultado_final, 2)) + "**</span>",
                     unsafe_allow_html=True,
-                    width='stretch'
+                    width='stretch',
+                    text_alignment='center'
                 )
 
             col_left, col_center1, col_center2, col_right = st.columns([2, 1, 1, 2])
@@ -544,11 +546,12 @@ with tab_quiz:
                     unsafe_allow_html=True
                 )
                 selected_option = col_center.radio(
-                    '',
+                    'selected_option',
                     st.session_state['questions'][st.session_state['question_index']]['choices'],
                     index=None,
                     key='question_radio',
-                    on_change=set_as_answered
+                    on_change=set_as_answered,
+                    label_visibility="collapsed"
                 )
 
                 if selected_option:
@@ -577,11 +580,13 @@ with tab_quiz:
                 nota_final = 0
                 st.markdown(
                     "<span style='font-size: 4rem;text-align: center;'>**Sua nota é**</span>",
-                    unsafe_allow_html=True
+                    unsafe_allow_html=True,
+                    text_alignment='center'
                 )
                 st.markdown(
                     "<span style='font-size: 9rem;text-align: center;'>" + str(nota_final) + "/10</span>",
-                    unsafe_allow_html=True
+                    unsafe_allow_html=True,
+                    text_alignment='center'
                 )
                 msg_final = ''
                 match nota_final:
@@ -600,7 +605,8 @@ with tab_quiz:
 
                 st.markdown(
                     "<span style='font-size: 3rem;text-align: center;'>" + msg_final + "</span>",
-                    unsafe_allow_html=True
+                    unsafe_allow_html=True,
+                    text_alignment='center'
                 )
                 col_left, col_center, col_right = st.columns([1, 4, 1])
                 if nota_final == 10:
@@ -720,25 +726,30 @@ with tab_time:
             best_month_col.markdown(
                 "<span style='font-size: 2rem;text-align: center;'>" + mes_maior_nota + "</span><br>"
                 "<span style='font-size: 1.75rem;text-align: center;'>" + ', '.join(competicoes_mes_maior_nota) + "</span>",
-                unsafe_allow_html=True
+                unsafe_allow_html=True,
+                text_alignment='center'
             )
             best_month_col.markdown(
                 "Nota média<br><span style='font-size: 4rem;text-align: center;'>" + str(maior_nota_mes) + "</span>",
-                unsafe_allow_html=True
+                unsafe_allow_html=True,
+                text_alignment='center'
             )
 
             worst_month_col.markdown(
                 "<span style='font-size: 2.5rem;text-align: center;'><b>Pior mês</b></span>",
-                unsafe_allow_html=True
+                unsafe_allow_html=True,
+                text_alignment='center'
             )
             worst_month_col.markdown(
                 "<span style='font-size: 2rem;text-align: center;'>" + mes_menor_nota + "</span><br>"
                 "<span style='font-size: 1.75rem;text-align: center;'>" + ', '.join(competicoes_mes_menor_nota) + "</span>",
-                unsafe_allow_html=True
+                unsafe_allow_html=True,
+                text_alignment='center'
             )
             worst_month_col.markdown(
                 "Nota média<br><span style='font-size: 4rem;text-align: center; margin:0'>" + str(menor_nota_mes) + "</span>",
-                unsafe_allow_html=True
+                unsafe_allow_html=True,
+                text_alignment='center'
             )
 
         if tipo_visualizacao == 'Por jogo':
@@ -863,30 +874,36 @@ with tab_time:
             best_game_col, worst_game_col = st.columns(2)
             best_game_col.markdown(
                 "<span style='font-size: 2.5rem;text-align: center;'><b>Melhor jogo</b></span>",
-                unsafe_allow_html=True
+                unsafe_allow_html=True,
+                text_alignment='center'
             )
             best_game_col.markdown(
                 "<span style='font-size: 2rem;text-align: center;'>" + jogo_maior_nota_str + "</span><br>"
                 "<span style='font-size: 1.75rem;text-align: center;'>" + competicao_maior_nota + "</span>",
-                unsafe_allow_html=True
+                unsafe_allow_html=True,
+                text_alignment='center'
             )
             best_game_col.markdown(
                 "Nota média<br><span style='font-size: 4rem;text-align: center;'>" + str(maior_nota) + "</span>",
-                unsafe_allow_html=True
+                unsafe_allow_html=True,
+                text_alignment='center'
             )
 
             worst_game_col.markdown(
                 "<span style='font-size: 2.5rem;text-align: center;'><b>Pior jogo</b></span>",
-                unsafe_allow_html=True
+                unsafe_allow_html=True,
+                text_alignment='center'
             )
             worst_game_col.markdown(
                 "<span style='font-size: 2rem;text-align: center;'>" + jogo_menor_nota_str + "</span><br>"
                 "<span style='font-size: 1.75rem;text-align: center;'>" + competicao_menor_nota + "</span>",
-                unsafe_allow_html=True
+                unsafe_allow_html=True,
+                text_alignment='center'
             )
             worst_game_col.markdown(
                 "Nota média<br><span style='font-size: 4rem;text-align: center; margin:0'>" + str(menor_nota) + "</span>",
-                unsafe_allow_html=True
+                unsafe_allow_html=True,
+                text_alignment='center'
             )
 
     else:
@@ -1130,11 +1147,13 @@ with tab_jogador:
                     notas_competicao_cols[idx].markdown(
                         "<span style='font-size: 2rem;text-align: center;'><b>" + competicao_dict[competicoes_jogadas[id_nota]][
                             'name'] + "</b></span>",
-                        unsafe_allow_html=True
+                        unsafe_allow_html=True,
+                        text_alignment='center'
                     )
                     nota_media = jogos_jogador[jogos_jogador['Competição'] == competicoes_jogadas[id_nota]]['Nota'].mean()
                     notas_competicao_cols[idx].markdown(
                         "<span style='font-size: 4rem;text-align: center;'>" + str(round(nota_media, 1)) + "</span>",
-                        unsafe_allow_html=True
+                        unsafe_allow_html=True,
+                        text_alignment='center'
                     )
 
