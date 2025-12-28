@@ -850,7 +850,7 @@ with tab_time:
             ax.yaxis.grid(True, linestyle="--", alpha=0.25)
 
             plt.tight_layout()
-            st.pyplot(fig, use_container_width=True)
+            st.pyplot(fig, width='stretch')
             plt.close(fig)
 
             idx_jogo_max = notas_por_jogo["Média"].idxmax()
@@ -1049,7 +1049,7 @@ with tab_jogador:
 
             # GRÁFICO COM FOTOS
 
-            x = jogos_jogador["Data"].unique()
+            x = sorted(jogos_jogador["Data"].unique())
             escudos = get_escudos(jogos_jogador, x, times_dict)
 
             foto_b10 = "media/canal/b10.png"
@@ -1060,13 +1060,8 @@ with tab_jogador:
             DX = 4  # deslocamento em pixels quando sobreposto
             Y_EPS = 0.05  # tolerância de sobreposição (ajuste: 0.1 se quiser mais sensível)
 
-
             def is_missing(v):
                 return v is None or (isinstance(v, float) and math.isnan(v))
-
-
-
-
 
             # --- Pega as notas (sempre cria listas do mesmo tamanho) ---
             y_b10 = notas_por_pessoa(jogos_jogador, "B10", x) if show_notas_b10 else [None] * len(x)
@@ -1131,7 +1126,7 @@ with tab_jogador:
             ax.set_title("Jogos do " + selected_jogador_dict["Jogador"])
 
             plt.tight_layout()
-            st.pyplot(fig, use_container_width=True)
+            st.pyplot(fig, width='stretch')
             plt.close(fig)
 
             st.subheader('Desempenho por competição')
