@@ -341,7 +341,7 @@ with st.expander("Filtros"):
     st.write('Escolha as competições')
     compet_col1, compet_col2 = st.columns(2)
     compet_selected = compet_col1.multiselect(
-        "",
+        "competition_multiselect",
         sorted(competicoes_df['Competição'].to_list()),
         default=competicoes_df['Competição'].to_list(),
         label_visibility='collapsed',
@@ -615,7 +615,7 @@ with tab_quiz:
 with tab_time:
     st.markdown('#### Como você prefere ver os dados?', unsafe_allow_html=True)
     tipo_visualizacao = st.radio(
-        "",
+        "radio_visualization_selection",
         ['Por mês', 'Por jogo'],
         label_visibility='collapsed',
         horizontal=True,
@@ -690,7 +690,7 @@ with tab_time:
 
             ax.boxplot(
                 dados,
-                labels=[str(m) for m in meses],  # "2024-03", "2024-04", ...
+                tick_labels=[str(m) for m in meses],  # "2024-03", "2024-04", ...
                 patch_artist=True
             )
 
