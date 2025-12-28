@@ -559,6 +559,12 @@ with tab_quiz:
                 else:
                     selected_option_idx = -1
 
+                st.markdown(
+                    'Opção selecionada: ' + selected_option + '<br>',
+                    'Índice opção selecionada: ' + str(selected_option_idx),
+                    unsafe_allow_html=True
+                )
+
                 col_left, col_center, col_right = st.columns([3, 1, 3])
                 # col_center1.button(
                 #     'Anterior',
@@ -611,6 +617,8 @@ with tab_quiz:
                 col_left, col_center, col_right = st.columns([1, 4, 1])
                 if nota_final == 10:
                     col_center.image('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmQwdXNtOGFqNTl2cHJxM3ppbHFnazRram11c2JuaHd1eGp4NWNjdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EQSjwNQayEjLCPgGWz/giphy.gif')
+
+            st.write(st.session_state['questions'])
 
 with tab_time:
     st.markdown('#### Como você prefere ver os dados?', unsafe_allow_html=True)
@@ -812,7 +820,7 @@ with tab_time:
 
             ax.boxplot(
                 dados,
-                labels=[d.strftime("%d/%m") for d in datas],
+                tick_labels=[d.strftime("%d/%m") for d in datas],
                 patch_artist=True,
                 boxprops=dict(facecolor="#e6e6e6", edgecolor="#555"),
                 medianprops=dict(color="black", linewidth=2),
