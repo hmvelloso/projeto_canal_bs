@@ -186,70 +186,70 @@ perguntas_quiz = [
         'question': 'Qual foi o melhor jogador da Libertadores 2025?',
         'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
         'correct_idx': 0,
-        'selected_correct': -1,
+        'selected_correct': 0,
         'comment': ''
     },
     {
         'question': 'Qual foi o melhor jogador do BR 2025?',
         'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
         'correct_idx': 1,
-        'selected_correct': -1,
+        'selected_correct': 0,
         'comment': ''
     },
     {
         'question': 'Qual jogador já teve a maior distância entre sua maior e menor nota em um ano?',
         'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
         'correct_idx': 2,
-        'selected_correct': -1,
+        'selected_correct': 0,
         'comment': ''
     },
     {
         'question': 'Qual o jogo de melhor média do time em 2025?',
         'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
         'correct_idx': 3,
-        'selected_correct': -1,
+        'selected_correct': 0,
         'comment': ''
     },
     {
         'question': 'Qual jogador levou mais o prêmio nem Noé em 2024?',
         'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
         'correct_idx': 0,
-        'selected_correct': -1,
+        'selected_correct': 0,
         'comment': ''
     },
     {
         'question': 'Qual o jogador mais regular em 2025?',
         'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
         'correct_idx': 1,
-        'selected_correct': -1,
+        'selected_correct': 0,
         'comment': ''
     },
     {
         'question': 'Qual jogador mais irritou o Simões em 2025?',
         'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
         'correct_idx': 2,
-        'selected_correct': -1,
+        'selected_correct': 0,
         'comment': ''
     },
     {
         'question': 'Qual jogador teve mais vezes a maior nota da partida em 2025?',
         'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
         'correct_idx': 3,
-        'selected_correct': -1,
+        'selected_correct': 0,
         'comment': ''
     },
     {
         'question': 'Qual jogador teve mais vezes a menor nota da partida em 2025?',
         'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
         'correct_idx': 0,
-        'selected_correct': -1,
+        'selected_correct': 0,
         'comment': ''
     },
     {
         'question': 'Pergunta 10',
         'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
         'correct_idx': 0,
-        'selected_correct': -1,
+        'selected_correct': 0,
         'comment': ''
     }
 ]
