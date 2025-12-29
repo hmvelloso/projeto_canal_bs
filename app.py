@@ -170,10 +170,10 @@ with open('metadados/times.csv', 'r', encoding='utf-8') as f:
             dados = time.strip().split(',')
             times_dict[dados[0]] = dados[1]
 
-st.write(os.listdir('jogos'))
+st.write(sorted(os.listdir('jogos'))[1:])
 
 jogos_df = pd.DataFrame()
-for jogo in os.listdir('jogos')[2:]:
+for jogo in sorted(os.listdir('jogos'))[1:]:
     jogos_df = pd.concat([jogos_df, get_notas(jogo)], ignore_index=True)
 
 valores_default = {
