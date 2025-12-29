@@ -170,6 +170,8 @@ with open('metadados/times.csv', 'r', encoding='utf-8') as f:
             dados = time.strip().split(',')
             times_dict[dados[0]] = dados[1]
 
+st.write(os.listdir('jogos'))
+
 jogos_df = pd.DataFrame()
 for jogo in os.listdir('jogos')[2:]:
     jogos_df = pd.concat([jogos_df, get_notas(jogo)], ignore_index=True)
