@@ -625,9 +625,10 @@ with tab_time:
         # on_change=st.rerun()
     )
 
-    jogos_time_df = jogos_df
+    jogos_time_df = jogos_df.copy()
     st.write('Antes das mudanças')
     st.dataframe(jogos_time_df)
+
     if selected_ano:
         jogos_time_df = jogos_time_df[jogos_time_df['Data (Ano)'].isin(selected_ano)]
 
@@ -651,6 +652,8 @@ with tab_time:
             ]
             st.write('Antes das mudanças, mas dentro do if')
             st.dataframe(jogos_time_df)
+
+
 
             jogos_time_df["Data"] = pd.to_datetime(jogos_time_df["Data"])
             st.write('Coluna Data como dt')
