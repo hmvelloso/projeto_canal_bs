@@ -653,7 +653,7 @@ with tab_time:
                 'Jogador (min)'
             ]
             st.write('Antes das mudanças, mas dentro do if')
-
+            st.write(jogos_time_df["Data"])
             jogos_time_df["Data"] = pd.to_datetime(jogos_time_df["Data"], format='ISO8601')
             st.write('Coluna Data como dt')
             st.dataframe(jogos_time_df)
