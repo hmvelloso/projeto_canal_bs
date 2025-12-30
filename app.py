@@ -637,7 +637,7 @@ with tab_time:
 
     show_charts = True
     if not selected_ano or not siglas:
-        jogos_time_df = pd.DataFrame()
+        # jogos_time_df = pd.DataFrame()
         show_charts = False
 
     if show_charts:
