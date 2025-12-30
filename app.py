@@ -627,6 +627,8 @@ with tab_time:
 
     jogos_time_df = jogos_df
 
+    st.dataframe(jogos_time_df)
+
     if selected_ano:
         jogos_time_df = jogos_time_df[jogos_time_df['Data (Ano)'].isin(selected_ano)]
 
