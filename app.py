@@ -170,11 +170,12 @@ with open('metadados/times.csv', 'r', encoding='utf-8') as f:
             dados = time.strip().split(',')
             times_dict[dados[0]] = dados[1]
 
-st.write(sorted(os.listdir('jogos'))[1:])
 
 jogos_df = pd.DataFrame()
 for jogo in sorted(os.listdir('jogos'))[1:]:
     jogos_df = pd.concat([jogos_df, get_notas(jogo)], ignore_index=True)
+
+st.dataframe(jogos_df)
 
 valores_default = {
     'filter_ano': sorted(jogos_df['Data (Ano)'].unique()),
