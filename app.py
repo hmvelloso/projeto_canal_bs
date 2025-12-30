@@ -630,9 +630,11 @@ with tab_time:
     st.dataframe(jogos_time_df)
 
     if selected_ano:
+        st.write(selected_ano)
         jogos_time_df = jogos_time_df[jogos_time_df['Data (Ano)'].isin(selected_ano)]
 
     if siglas:
+        st.write(siglas)
         jogos_time_df = jogos_time_df[jogos_time_df['Competição'].isin(siglas)]
 
     show_charts = True
@@ -651,9 +653,6 @@ with tab_time:
                 'Jogador (min)'
             ]
             st.write('Antes das mudanças, mas dentro do if')
-            st.dataframe(jogos_time_df)
-
-
 
             jogos_time_df["Data"] = pd.to_datetime(jogos_time_df["Data"])
             st.write('Coluna Data como dt')
