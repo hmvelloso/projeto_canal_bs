@@ -626,7 +626,8 @@ with tab_time:
     )
 
     jogos_time_df = jogos_df
-
+    st.write('Antes das mudanças')
+    st.dataframe(jogos_time_df)
     if selected_ano:
         jogos_time_df = jogos_time_df[jogos_time_df['Data (Ano)'].isin(selected_ano)]
 
@@ -648,12 +649,15 @@ with tab_time:
                 'Menor nota',
                 'Jogador (min)'
             ]
-
+            st.write('Antes das mudanças, mas dentro do if')
             st.dataframe(jogos_time_df)
 
             jogos_time_df["Data"] = pd.to_datetime(jogos_time_df["Data"])
-            jogos_time_df["Mês/Ano"] = jogos_time_df["Data"].dt.to_period("M").dt.strftime("%m/%y")
+            st.write('Coluna Data como dt')
+            st.dataframe(jogos_time_df)
 
+            jogos_time_df["Mês/Ano"] = jogos_time_df["Data"].dt.to_period("M").dt.strftime("%m/%y")
+            st.write('Coluna Mes/Ano adicionada')
             st.dataframe(jogos_time_df)
 
             idx_max = jogos_time_df.groupby("Mês/Ano")["Nota"].idxmax()
