@@ -649,6 +649,8 @@ with tab_time:
                 'Jogador (min)'
             ]
 
+            st.dataframe(jogos_time_df)
+
             jogos_time_df["Data"] = pd.to_datetime(jogos_time_df["Data"])
             jogos_time_df["Mês/Ano"] = jogos_time_df["Data"].dt.to_period("M").dt.strftime("%m/%y")
 
