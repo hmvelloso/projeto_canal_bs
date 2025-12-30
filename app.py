@@ -175,7 +175,7 @@ jogos_df = pd.DataFrame()
 for jogo in sorted(os.listdir('jogos'))[1:]:
     jogos_df = pd.concat([jogos_df, get_notas(jogo)], ignore_index=True)
 
-st.dataframe(jogos_df)
+#st.dataframe(jogos_df)
 
 valores_default = {
     'filter_ano': sorted(jogos_df['Data (Ano)'].unique()),
@@ -626,20 +626,20 @@ with tab_time:
     )
 
     jogos_time_df = jogos_df.copy()
-    st.write('Antes das mudanças')
-    st.dataframe(jogos_time_df)
+    #st.write('Antes das mudanças')
+    #st.dataframe(jogos_time_df)
 
     if selected_ano:
         st.write(selected_ano)
-        #jogos_time_df = jogos_time_df[jogos_time_df['Data (Ano)'].isin(selected_ano)]
+        jogos_time_df = jogos_time_df[jogos_time_df['Data (Ano)'].isin(selected_ano)]
 
     if siglas:
         st.write(siglas)
-        #jogos_time_df = jogos_time_df[jogos_time_df['Competição'].isin(siglas)]
+        jogos_time_df = jogos_time_df[jogos_time_df['Competição'].isin(siglas)]
 
     show_charts = True
     if not selected_ano or not siglas:
-        # jogos_time_df = pd.DataFrame()
+        jogos_time_df = pd.DataFrame()
         show_charts = False
 
     if show_charts:
@@ -652,15 +652,15 @@ with tab_time:
                 'Menor nota',
                 'Jogador (min)'
             ]
-            st.write('Antes das mudanças, mas dentro do if')
-            st.write(jogos_time_df["Data"].unique())
+            #st.write('Antes das mudanças, mas dentro do if')
+            #st.write(jogos_time_df["Data"].unique())
             jogos_time_df["Data"] = pd.to_datetime(jogos_time_df["Data"], format='ISO8601')
-            st.write('Coluna Data como dt')
-            st.dataframe(jogos_time_df)
+            #st.write('Coluna Data como dt')
+            #st.dataframe(jogos_time_df)
 
             jogos_time_df["Mês/Ano"] = jogos_time_df["Data"].dt.to_period("M").dt.strftime("%m/%y")
-            st.write('Coluna Mes/Ano adicionada')
-            st.dataframe(jogos_time_df)
+            #st.write('Coluna Mes/Ano adicionada')
+            #st.dataframe(jogos_time_df)
 
             idx_max = jogos_time_df.groupby("Mês/Ano")["Nota"].idxmax()
             idx_min = jogos_time_df.groupby("Mês/Ano")["Nota"].idxmin()
