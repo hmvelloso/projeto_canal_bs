@@ -630,11 +630,11 @@ with tab_time:
     #st.dataframe(jogos_time_df)
 
     if selected_ano:
-        st.write(selected_ano)
+        #st.write(selected_ano)
         jogos_time_df = jogos_time_df[jogos_time_df['Data (Ano)'].isin(selected_ano)]
 
     if siglas:
-        st.write(siglas)
+        #st.write(siglas)
         jogos_time_df = jogos_time_df[jogos_time_df['Competição'].isin(siglas)]
 
     show_charts = True
