@@ -627,8 +627,6 @@ with tab_time:
 
     jogos_time_df = jogos_df
 
-    st.dataframe(jogos_time_df)
-
     if selected_ano:
         jogos_time_df = jogos_time_df[jogos_time_df['Data (Ano)'].isin(selected_ano)]
 
@@ -653,6 +651,8 @@ with tab_time:
 
             jogos_time_df["Data"] = pd.to_datetime(jogos_time_df["Data"])
             jogos_time_df["Mês/Ano"] = jogos_time_df["Data"].dt.to_period("M").dt.strftime("%m/%y")
+
+            st.dataframe(jogos_time_df)
 
             idx_max = jogos_time_df.groupby("Mês/Ano")["Nota"].idxmax()
             idx_min = jogos_time_df.groupby("Mês/Ano")["Nota"].idxmin()
