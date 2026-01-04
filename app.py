@@ -440,7 +440,7 @@ with tab_quiz:
                 else:
                     label_col.markdown("Ordem aleatória")
 
-            jogadores_por_num_jogo = pd.pivot_table(jogos_df,
+            jogadores_por_num_jogo = pd.pivot_table(quiz_df,
                                                     values='Nota',
                                                     index='Jogador',
                                                     columns='Nota por',
