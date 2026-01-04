@@ -394,6 +394,23 @@ with tab_quiz:
                 unsafe_allow_html=True,
             )
 
+            quiz_df = jogos_df.copy()
+            # st.write('Antes das mudanças')
+            # st.dataframe(jogos_time_df)
+
+            if selected_ano:
+                # st.write(selected_ano)
+                quiz_df = quiz_df[quiz_df['Data (Ano)'].isin(selected_ano)]
+
+            if siglas:
+                # st.write(siglas)
+                quiz_df = quiz_df[quiz_df['Competição'].isin(siglas)]
+
+            show_charts = True
+            if not selected_ano or not siglas:
+                jogos_time_df = pd.DataFrame()
+                show_charts = False
+
             with st.expander('Configurações do quiz'):
                 col1, col2 = st.columns(2)
 
