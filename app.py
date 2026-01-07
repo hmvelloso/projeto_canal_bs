@@ -572,7 +572,11 @@ with tab_quiz:
                 col_center.markdown(
                     "<span style='font-size: 1.5rem'>" +
                     st.session_state['questions'][st.session_state['question_index']]['question'] +
-                    "</span>",
+                    "</span>" +
+                    "<span style='font-size: 0.75rem'>" +
+                    st.session_state['questions'][st.session_state['question_index']]['subtext'] +
+                    "</span>"
+                    ,
                     unsafe_allow_html=True
                 )
                 selected_option = col_center.radio(
@@ -638,6 +642,11 @@ with tab_quiz:
                     text_alignment='center'
                 )
                 col_left, col_center, col_right = st.columns([1, 4, 1])
+
+                with expander('Respostas'):
+                    for q in st.session_state['questions']:
+                        st.markdown(q.comment)
+
                 if nota_final == 10:
                     col_center.image('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmQwdXNtOGFqNTl2cHJxM3ppbHFnazRram11c2JuaHd1eGp4NWNjdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EQSjwNQayEjLCPgGWz/giphy.gif')
 
