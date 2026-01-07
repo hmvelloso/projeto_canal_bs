@@ -187,6 +187,7 @@ valores_default = {
 perguntas_quiz = [
     {
         'question': 'Qual foi o melhor jogador da Libertadores 2025?',
+        'subtext': '',
         'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
         'correct_idx': 0,
         'selected_correct': 0,
@@ -194,13 +195,15 @@ perguntas_quiz = [
     },
     {
         'question': 'Qual foi o melhor jogador do BR 2025?',
+        'subtext': '',
         'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
         'correct_idx': 1,
         'selected_correct': 0,
         'comment': ''
     },
     {
-        'question': 'Qual jogador já teve a maior distância entre sua maior e menor nota em um ano?',
+        'question': 'Qual jogador já teve a maior distância entre sua maior e menor nota em 2025?',
+        'subtext': '',
         'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
         'correct_idx': 2,
         'selected_correct': 0,
@@ -208,6 +211,7 @@ perguntas_quiz = [
     },
     {
         'question': 'Qual o jogo de melhor média do time em 2025?',
+        'subtext': '',
         'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
         'correct_idx': 3,
         'selected_correct': 0,
@@ -215,6 +219,7 @@ perguntas_quiz = [
     },
     {
         'question': 'Qual jogador levou mais o prêmio nem Noé em 2024?',
+        'subtext': '',
         'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
         'correct_idx': 0,
         'selected_correct': 0,
@@ -222,34 +227,39 @@ perguntas_quiz = [
     },
     {
         'question': 'Qual o jogador mais regular em 2025?',
-        'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
-        'correct_idx': 1,
+        'subtext': '',
+        'choices': ['Léo Ortiz', 'Alex Sandro', 'O sorvete russo', 'Pulgar'],
+        'correct_idx': 2,
         'selected_correct': 0,
-        'comment': ''
+        'comment': 'Alex Sandro teve melhor score quando levado em consideração a maior média das notas (7.4) e menor desvio padrão (1.3). O top-3 fecha com Léo Ortiz e aquele cara que quis passar frio'
     },
     {
         'question': 'Qual jogador mais irritou o Simões em 2025?',
-        'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
+        'subtext': 'Leva em consideração a quantidade de vezes que o jogador recebeu uma nota <4 do Simões dividido pela quantidade de notas recebidas',
+        'choices': ['Emerson Royal', 'Samuel Lino', 'Allan', 'Léo Pereira'],
         'correct_idx': 2,
         'selected_correct': 0,
-        'comment': ''
+        'comment': 'Lino recebeu nota menor que 4 em 20% das partidas (5/25). Apesar de ter a mesma quantidade de Plata (5) e um a menos do que Léo Pereira (6), ambos jogaram mais jogos e ficaram com uma porcentagem menor (12% e 10%, respectivamente)'
     },
     {
         'question': 'Qual jogador teve mais vezes a maior nota da partida em 2025?',
-        'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
-        'correct_idx': 3,
+        'subtext': 'Leva em consideração a quantidade de vezes que foi o melhor da partida dividido pela quantidade de notas recebidas',
+        'choices': ['Pedro', 'Danilo', 'Arrascaeta', 'Léo Ortiz'],
+        'correct_idx': 1,
         'selected_correct': 0,
-        'comment': ''
+        'comment': 'Pedro foi o melhor em 27% das partidas (7/26) que recebeu nota. O top-3 fecha com De La Cruz com 25% (6/24) e Arrascaeta com 24% (13/55)'
     },
     {
         'question': 'Qual jogador teve mais vezes a menor nota da partida em 2025?',
-        'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
-        'correct_idx': 0,
+        'subtext': 'Leva em consideração a quantidade de vezes que foi o pior da partida dividido pela quantidade de notas recebidas',
+        'choices': ['Allan', 'Ayrton Lucas', 'Michael', 'Cebolinha'],
+        'correct_idx': 4,
         'selected_correct': 0,
-        'comment': ''
+        'comment': 'Cebolinha foi o "ganhador" nessa categoria recebendo a menor nota em 59% das partidas (16/27) que recebeu nota. O top-3 é fechado com Michael e Evertton Araújo. Allan e Ayrton Lucas estão em 8º e 14º, respectivamente.'
     },
     {
         'question': 'Pergunta 10',
+        'subtext': '',
         'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
         'correct_idx': 0,
         'selected_correct': 0,
