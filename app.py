@@ -260,7 +260,7 @@ perguntas_quiz = [
     {
         'question': 'Qual jogador leva o prêmio D10 e Simone de melhor jogador de 2025?',
         'subtext': 'Foi considerada a média geral de todos os jogares e jogadores com menos de 10 jogos foram descartados.',
-        'choices': ['jorginho', 'Arrascaeta', 'Alex Sandro', 'Léo Ortiz'],
+        'choices': ['Jorginho', 'Arrascaeta', 'Alex Sandro', 'Léo Ortiz'],
         'correct_idx': 2,
         'selected_correct': 0,
         'comment': 'Alex Sandro recebe o prêmio com média de 7.4, seguido por Ortiz (7.2) e Jorginho (7.1). Arrascaeta ficou em 11º com 6.8'
@@ -643,7 +643,7 @@ with tab_quiz:
                 )
                 col_left, col_center, col_right = st.columns([1, 4, 1])
 
-                with expander('Respostas'):
+                with st.expander('Respostas'):
                     for q in st.session_state['questions']:
                         st.markdown(q.comment)
 
