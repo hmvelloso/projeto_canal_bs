@@ -213,7 +213,7 @@ perguntas_quiz = [
         'question': 'Qual o jogo de melhor média do time em 2025?',
         'subtext': 'Foi tirada a média geral de todas as notas por partida',
         'choices': ['Internacional 0 x 2 Flamengo (Libertadores)', 'Flamengo 8 x 0 Vitória (Brasileiro)', 'Flamengo 4 x 0 Corinthians (Brasileiro)', 'Flamengo 3 x 1 Chelsea (Copa do Mundo de Clubes)'],
-        'correct_idx': 3,
+        'correct_idx': 2,
         'selected_correct': 0,
         'comment': 'Flamengo 4 x 0 Corinthians pelo Brasileiro teve a maior média (8.5). os jogos contra Vitória e Internacional vieram logo atrás com médias de 8.4 e 8.2, respectivamente.'
     },
