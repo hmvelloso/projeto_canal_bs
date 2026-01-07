@@ -572,8 +572,8 @@ with tab_quiz:
                 col_center.markdown(
                     "<span style='font-size: 1.5rem'>" +
                     st.session_state['questions'][st.session_state['question_index']]['question'] +
-                    "</span>" +
-                    "<span style='font-size: 0.75rem'>" +
+                    "</span><br>" +
+                    "<span style='font-size: 1rem'>" +
                     st.session_state['questions'][st.session_state['question_index']]['subtext'] +
                     "</span>"
                     ,
