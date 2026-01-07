@@ -645,7 +645,7 @@ with tab_quiz:
 
                 with st.expander('Respostas'):
                     for q in st.session_state['questions']:
-                        st.markdown(q.comment)
+                        st.markdown(q['comment'])
 
                 if nota_final == 10:
                     col_center.image('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmQwdXNtOGFqNTl2cHJxM3ppbHFnazRram11c2JuaHd1eGp4NWNjdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EQSjwNQayEjLCPgGWz/giphy.gif')
