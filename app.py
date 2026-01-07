@@ -187,7 +187,7 @@ valores_default = {
 perguntas_quiz = [
     {
         'question': 'Qual foi o melhor jogador da Libertadores 2025?',
-        'subtext': 'Foi levado em consideração a média de notas de cada jogador e jogadores com menos de 4 partidas foram removidos',
+        'subtext': 'Foi levado em consideração a média de notas de cada jogador e jogadores com menos de 3 partidas foram removidos',
         'choices': ['Danilo', 'Rossi', 'Pulgar', 'Carrascal'],
         'correct_idx': 0,
         'selected_correct': 0,
@@ -195,41 +195,41 @@ perguntas_quiz = [
     },
     {
         'question': 'Qual foi o melhor jogador do BR 2025?',
-        'subtext': '',
-        'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
-        'correct_idx': 1,
+        'subtext': 'Foi levado em consideração a média de notas de cada jogador e jogadores com menos de 5 partidas foram removidos',
+        'choices': ['Arrascaeta', 'Pedro', 'Léo Ortiz', 'Alex Sandro'],
+        'correct_idx': 3,
         'selected_correct': 0,
-        'comment': ''
+        'comment': 'Alex Sandro teve a maior média (7.44), seguido de perto por Pedro (7.42) e Arrascaeta (7.32).'
     },
     {
-        'question': 'Qual jogador já teve a maior distância entre sua maior e menor nota em 2025?',
-        'subtext': '',
-        'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
-        'correct_idx': 2,
+        'question': 'Qual jogador já teve a maior distância entre sua maior e menor nota em 2025 (famoso jogador montanha-russa)?',
+        'subtext': 'Leva em consideração a menor e maior nota de cada jogador em uma partida.',
+        'choices': ['Plata', 'Luiz Araujo', 'Arrascaeta', 'Ayrton Lucas'],
+        'correct_idx': 0,
         'selected_correct': 0,
-        'comment': ''
+        'comment': 'Plata detém a maior diferença entre sua nota máxima (9.5 em Internacional x Flamengo pela Libertadores e PSG x Flamengo no Intercontinental) e mínima (0 em São Paulo x Flamengo pelo Brasileirão). Arrascaeta e Luiz Araujo fecham o top-3.'
     },
     {
         'question': 'Qual o jogo de melhor média do time em 2025?',
-        'subtext': '',
-        'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
+        'subtext': 'Foi tirada a média geral de todas as notas por partida',
+        'choices': ['Internacional 0 x 2 Flamengo (Libertadores)', 'Flamengo 8 x 0 Vitória (Brasileiro)', 'Flamengo 4 x 0 Corinthians (Brasileiro)', 'Flamengo 3 x 1 Chelsea (Copa do Mundo de Clubes)'],
         'correct_idx': 3,
         'selected_correct': 0,
-        'comment': ''
+        'comment': 'Flamengo 4 x 0 Corinthians pelo Brasileiro teve a maior média (8.5). os jogos contra Vitória e Internacional vieram logo atrás com médias de 8.4 e 8.2, respectivamente.'
     },
     {
-        'question': 'Qual jogador levou mais o prêmio nem Noé em 2024?',
-        'subtext': '',
-        'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
-        'correct_idx': 0,
+        'question': 'Qual jogador levou o maior prêmio "nem Noé" em 2025?',
+        'subtext': 'Foi tirada a média do time em uma partida e considerados aqueles jogadores que tiveram uma maior diferença entre a sua nota e a nota do time.',
+        'choices': ['Saúl (Estudiantes x Flamengo - Libertadores)', 'Rossi (Flamengo x Dep Táchira - Libertadores)', 'Rossi (Estudiantes x Flamengo - Libertadores)', 'Rossi (Cruzeiro x Flamengo - Brasileiro)'],
+        'correct_idx': 1,
         'selected_correct': 0,
-        'comment': ''
+        'comment': 'Rossi contra do Táchira no Maracanã teve a maior média (9) comparado ao resto do time (3.85). Saúl (contra o Estudiantes na Argentina) e Rossi (contra o Cruzeiro no Mineirão) fecham o top-3'
     },
     {
         'question': 'Qual o jogador mais regular em 2025?',
         'subtext': 'Foi criado um score levando em consideração quem teve a maior média, mas também teve a menor variação nas notas',
-        'choices': ['Léo Ortiz', 'Alex Sandro', 'O sorvete russo', 'Pulgar'],
-        'correct_idx': 1,
+        'choices': ['Léo Ortiz', 'O gelado russo', 'Alex Sandro', 'Pulgar'],
+        'correct_idx': 2,
         'selected_correct': 0,
         'comment': 'Alex Sandro teve melhor score quando levado em consideração a maior média das notas (7.4) e menor desvio padrão (1.3). O top-3 fecha com Léo Ortiz e aquele cara que quis passar frio'
     },
@@ -258,12 +258,12 @@ perguntas_quiz = [
         'comment': 'Cebolinha foi o "ganhador" nessa categoria recebendo a menor nota em 59% das partidas (16/27) que recebeu nota. O top-3 é fechado com Michael e Evertton Araújo. Allan e Ayrton Lucas estão em 8º e 14º, respectivamente.'
     },
     {
-        'question': 'Pergunta 10',
-        'subtext': '',
-        'choices': ['Opção 1', 'Opção 2', 'Opção 3', 'Opção 4'],
-        'correct_idx': 0,
+        'question': 'Qual jogador leva o prêmio D10 e Simone de melhor jogador de 2025?',
+        'subtext': 'Foi considerada a média geral de todos os jogares e jogadores com menos de 10 jogos foram descartados.',
+        'choices': ['jorginho', 'Arrascaeta', 'Alex Sandro', 'Léo Ortiz'],
+        'correct_idx': 2,
         'selected_correct': 0,
-        'comment': ''
+        'comment': 'Alex Sandro recebe o prêmio com média de 7.4, seguido por Ortiz (7.2) e Jorginho (7.1). Arrascaeta ficou em 11º com 6.8'
     }
 ]
 
