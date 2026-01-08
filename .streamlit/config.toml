@@ -2,7 +2,7 @@
 
 [theme]
 # Set the main application background color
-backgroundColor = "#F0F2F6" # Example: a light gray color
+backgroundColor = "#B6B8BA" # Example: a light gray color
 
 # You can also set other colors here:
 primaryColor = "#FF4B4B"          # Color for interactive elements
