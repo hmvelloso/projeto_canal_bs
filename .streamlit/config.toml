@@ -1,0 +1,11 @@
+# .streamlit/config.toml
+
+[theme]
+# Set the main application background color
+backgroundColor = "#F0F2F6" # Example: a light gray color
+
+# You can also set other colors here:
+primaryColor = "#FF4B4B"          # Color for interactive elements
+secondaryBackgroundColor = "#E0E0E0" # Background for sidebars/widgets
+textColor = "#262730"             # Main text color
+base = "light"                    # Inherit from Streamlit's light or dark theme
