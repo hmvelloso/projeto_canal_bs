@@ -358,7 +358,7 @@ with st.expander("Filtros"):
     selected_ano = filter_cl1.multiselect(
         'Selecione um ano',
         sorted(jogos_df['Data (Ano)'].unique()),
-        default=sorted(jogos_df['Data (Ano)'].unique()),
+        #default=sorted(jogos_df['Data (Ano)'].unique()),
         key='filter_ano'
     )
 
