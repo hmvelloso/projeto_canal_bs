@@ -8,4 +8,4 @@ backgroundColor = "#B6B8BA" # Example: a light gray color
 primaryColor = "#FF4B4B"          # Color for interactive elements
 secondaryBackgroundColor = "#E0E0E0" # Background for sidebars/widgets
 textColor = "#262730"             # Main text color
-base = "light"                    # Inherit from Streamlit's light or dark theme
+base = "dark"                    # Inherit from Streamlit's light or dark theme
