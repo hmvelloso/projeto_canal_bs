@@ -3,6 +3,7 @@ import os
 import streamlit as st
 import math
 import numpy as np
+import base64
 
 import matplotlib
 matplotlib.use("Agg")  # backend headless pro Streamlit Cloud
@@ -294,7 +295,16 @@ if 'question_radio' not in st.session_state:
     st.session_state['question_radio'] = None
 
 
-bg_img_css = """
+# Função para converter imagem local em Base64
+def get_base64_of_image(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
+# Caminho relativo da imagem
+image_path = "media/bg.png"
+img_base64 = get_base64_of_image(image_path)
+
+bg_img_css_old = """
 .stApp {
     background: 
            linear-gradient(
@@ -316,6 +326,15 @@ bg_img_css = """
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7); /* Black overlay with 50% opacity */
     z-index: -1; /* Place the overlay behind the content */
+}}
+"""
+
+bg_img_css = """
+[data-testid="stAppViewContainer"] {{
+    background-image: url("data:image/png;base64,{img_base64}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }}
 """
 
@@ -645,7 +664,11 @@ with tab_quiz:
 
                 with st.expander('Respostas'):
                     for q in st.session_state['questions']:
-                        st.markdown(q['comment'])
+                        emoji = ':white_check_mark:' if q['selected_correct'] == 1 else ':x:'
+                        st.markdown(
+                            emoji + '<b>' + q['question'] + '</b>' + q['comment'],
+                            unsafe_allow_html=True
+                        )
 
                 if nota_final == 10:
                     col_center.image('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmQwdXNtOGFqNTl2cHJxM3ppbHFnazRram11c2JuaHd1eGp4NWNjdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EQSjwNQayEjLCPgGWz/giphy.gif')
